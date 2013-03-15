@@ -9,6 +9,10 @@
         {% else %}
         %title {{ site.title }}
         {% endif %}
+        
+        {% for css in site.external_css %}
+        %link{:rel => "stylesheet", :href => "{{ css.url }}" }
+        {% endfor %}
 
         %link{:rel => "stylesheet", :href => "{{ site.url }}/asset/css/app.css" }
         %link{:rel => "alternate",  :href => "{{ site.url }}/atom.xml", :type => "application/atom+xml",  :title => "Sitewide ATOM Feed"}
