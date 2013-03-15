@@ -35,4 +35,7 @@ else
 endif
 	bundle install
 
+setup_js:
+	bundle exec compass install -r zurb-foundation foundation/upgrade -c compass.rb
+
 .PHONY: setup
