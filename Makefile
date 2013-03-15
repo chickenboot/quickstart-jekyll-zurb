@@ -1,6 +1,7 @@
 #
 # Clean/Compile Life-cycle
 #
+UNAME := $(shell uname)
 
 all: clean compile
 
@@ -27,7 +28,11 @@ runserver: clean compile
 #
 
 setup:
+ifeq ($(UNAME), Darwin)
+	sudo easy_install Pygments
+else
 	sudo apt-get -y install python-pygments
+endif
 	bundle install
 
 .PHONY: setup
